@@ -12,4 +12,7 @@ class DisplayScreen
 		DisplayScreen(int width, int height);
 		~DisplayScreen();
 		Display * getDisplay(void);
+		void updateDisplay(void);
+		void setColor(ulong);
+		void drawPixel(int,int);
 };
