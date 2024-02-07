@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/fracudal.dir/FractalRender.cpp.o CMakeFiles/fracudal.dir/DisplayScreen.cpp.o CMakeFiles/fracudal.dir/main.cpp.o -o fracudal  /usr/lib/libSM.so /usr/lib/libICE.so /usr/lib/libX11.so /usr/lib/libXext.so 
