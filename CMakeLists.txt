@@ -4,7 +4,7 @@ project(fracudal-projecti LANGUAGES CXX CUDA)
 find_package(X11)
 
 add_executable(fracudal
-			   FractalRender.cpp
+			   WindowFrame.cpp
 			   DisplayScreen.cpp
 			   main.cu
 		   )

@@ -1,24 +1,24 @@
-#include "FractalRender.h"
+#include "WindowFrame.h"
 
 #define Q_KEY 24
 #define ESCAPE_KEY 9
 
-FractalRender::FractalRender(int width, int height)
+WindowFrame::WindowFrame(char *name,int width, int height)
 {
 	this->width = width;
 	this->height = height;
-	this->window = new DisplayScreen(this->width, this->height);
+	this->window = new DisplayScreen(name, this->width, this->height);
 	this->display = this->window->getDisplay();
 	this->buttonPressed = false;
 	this->quit = false;
 }
 
-FractalRender::~FractalRender()
+WindowFrame::~WindowFrame()
 {
 	delete window;
 }
 
-void FractalRender::render()
+void WindowFrame::render()
 {
 	do
 	{
@@ -29,7 +29,7 @@ void FractalRender::render()
 	} while (!this->quit);
 }
 
-bool FractalRender::getEvent()
+bool WindowFrame::getEvent()
 {
 	if(XPending(this->display))
 	{
@@ -40,7 +40,7 @@ bool FractalRender::getEvent()
 	return false;
 }
 
-void FractalRender::handleEvent()
+void WindowFrame::handleEvent()
 {
 	if((this->event.type == ButtonPress && this->event.xbutton.button == Button1 && this->buttonPressed == false) || (this->event.type == ButtonRelease && this->event.xbutton.button == Button1 && this->buttonPressed == true))
 	{
@@ -56,22 +56,22 @@ void FractalRender::handleEvent()
 	}
 }
 
-void FractalRender::updateDisplay()
+void WindowFrame::updateDisplay()
 {
 	this->window->updateDisplay();
 }
 
-void FractalRender::setColor(ulong color)
+void WindowFrame::setColor(ulong color)
 {
 	this->window->setColor(color);
 }
 
-void FractalRender::drawPixel(int xpos, int ypos)
+void WindowFrame::drawPixel(int xpos, int ypos)
 {
 	this->window->drawPixel(xpos, ypos);
 }
 
-void FractalRender::drawMandelbrot()
+void WindowFrame::drawMandelbrot()
 {
 	for(int j = 0; j < this->height; j++)
 	{

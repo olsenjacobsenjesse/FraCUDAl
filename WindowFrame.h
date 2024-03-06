@@ -1,6 +1,6 @@
 #include "DisplayScreen.h"
 
-class FractalRender
+class WindowFrame
 {
 	private:
 		DisplayScreen * window;
@@ -11,8 +11,8 @@ class FractalRender
 		bool quit;
 
 	public:
-		FractalRender(int,int);
-		~FractalRender();
+		WindowFrame(char*,int,int);
+		~WindowFrame();
 		void render();
 		bool getEvent();
 		void handleEvent();
